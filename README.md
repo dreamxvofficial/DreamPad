@@ -92,7 +92,7 @@ The website shortcuts can be changed depending on the user's workflow.
 
 The schematic contains the complete electrical design for DreamPad, including the 9-key matrix, rotary encoder, OLED display, and Seeed Studio XIAO microcontroller.
 
-![DreamPad Schematic](images/schematic.png)
+![DreamPad Schematic](images/Schematic.png)
 
 ---
 
