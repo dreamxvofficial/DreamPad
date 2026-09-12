@@ -1,8 +1,8 @@
-# DreamDeck
+# DreamPad
 
 ### A customizable physical control pad for your digital workspace.
 
-**DreamDeck by DreamXV** is a custom USB control pad designed to make everyday laptop interactions faster, easier, and more fun.
+**DreamPad by DreamXV** is a custom USB control pad designed to make everyday laptop interactions faster, easier, and more fun.
 
 It combines productivity shortcuts, customizable website buttons, volume control, and controls for a virtual character into one compact device.
 
@@ -25,7 +25,7 @@ It combines productivity shortcuts, customizable website buttons, volume control
 
 I wanted to build a small device that could sit on my desk and give me quick physical access to the things I use every day.
 
-Instead of constantly switching between my keyboard, mouse, and different applications, DreamDeck puts frequently used actions into one physical device.
+Instead of constantly switching between my keyboard, mouse, and different applications, DreamPad puts frequently used actions into one physical device.
 
 I also wanted to make it more personal by connecting the physical buttons to a virtual character on my laptop.
 
@@ -82,9 +82,9 @@ The four website buttons will be configurable so they can be changed depending o
 
 ## Schematic
 
-The schematic shows how the electronic components of DreamDeck are connected.
+The schematic shows how the electronic components of DreamPad are connected.
 
-![DreamDeck Schematic](images/schematic.png)
+![DreamPad Schematic](images/schematic.png)
 
 ---
 
@@ -92,7 +92,7 @@ The schematic shows how the electronic components of DreamDeck are connected.
 
 The schematic will later be converted into the physical PCB layout.
 
-![DreamDeck PCB](images/pcb.png)
+![DreamPad PCB](images/pcb.png)
 
 > PCB design coming soon.
 
@@ -102,7 +102,7 @@ The schematic will later be converted into the physical PCB layout.
 
 A 3D representation of the completed PCB.
 
-![DreamDeck PCB 3D](images/pcb_3d.png)
+![DreamPad PCB 3D](images/pcb_3d.png)
 
 > Coming soon.
 
@@ -110,9 +110,9 @@ A 3D representation of the completed PCB.
 
 # 🖨️ CAD Design
 
-The enclosure will be designed as a custom 3D-printable case for DreamDeck.
+The enclosure will be designed as a custom 3D-printable case for DreamPad.
 
-![DreamDeck CAD](images/cad.png)
+![DreamPad CAD](images/cad.png)
 
 > CAD design coming soon.
 
@@ -122,7 +122,7 @@ The enclosure will be designed as a custom 3D-printable case for DreamDeck.
 
 The final enclosure will be checked together with the PCB to make sure all components fit correctly.
 
-![DreamDeck CAD + PCB](images/cad_pcb.png)
+![DreamPad CAD + PCB](images/cad_pcb.png)
 
 > Coming soon.
 
@@ -130,7 +130,7 @@ The final enclosure will be checked together with the PCB to make sure all compo
 
 # 💻 Software
 
-DreamDeck will communicate with the laptop through USB.
+DreamPad will communicate with the laptop through USB.
 
 The software will handle:
 
@@ -165,7 +165,7 @@ More software details will be added as development progresses.
 # 📁 Project Structure
 
 ```text
-DreamDeck/
+DreamPad/
 │
 ├── images/
 │   ├── schematic.png
@@ -215,6 +215,6 @@ DreamDeck/
 
 # 👨‍💻 Creator
 
-**DreamDeck by DreamXV**
+**DreamPad by DreamXV**
 
 Built by **DreamXV**.
