@@ -1,0 +1,6 @@
+"Reference","Qty","Value","DNP","Exclude from BOM","Exclude from Board","Exclude from Simulation","Exclude from Position Files","Footprint","Datasheet"
+"D1,D2,D3,D4,D5,D6,D7,D8,D9","9","D","","","","","${EXCLUDE_FROM_POS_FILES}","Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal",""
+"J1","1","OLED Display","","","","","${EXCLUDE_FROM_POS_FILES}","Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical",""
+"SW1,SW2,SW3,SW5,SW6,SW7,SW9,SW10,SW11","9","SW_Push","","","","","${EXCLUDE_FROM_POS_FILES}","Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB",""
+"SW13","1","RotaryEncoder_Switch","","","","","${EXCLUDE_FROM_POS_FILES}","Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm",""
+"U1","1","MOUDLE-SEEEDUINO-XIAO","","","","","${EXCLUDE_FROM_POS_FILES}","Seeduino:XIAO-Generic-Hybrid-14P-2.54-21X17.8MM",""
