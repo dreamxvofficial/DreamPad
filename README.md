@@ -275,20 +275,6 @@ Through DreamPad, I learned more about:
 
 ---
 
-# 🚧 Future Improvements
-
-Some features I would like to explore in future versions:
-
-- More programmable buttons
-- OLED animations
-- More virtual character interactions
-- Multiple profiles
-- Custom configuration software
-- Wireless connectivity
-- RGB lighting
-
----
-
 # 🏁 Final Result
 
 DreamPad combines hardware and software into a single desktop device that makes everyday computer interactions more accessible while adding a fun and personal interface.
