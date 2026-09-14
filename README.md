@@ -61,7 +61,7 @@ I started the project by making schematic in KiCad.
 
 This is where I worked out how the 9 buttons, OLED, rotary encoder and XIAO RP2040 would all connect.
 
-![Schematic](images/schematic.png)
+![Schematic](images/Schematic.png)
 
 ---
 
