@@ -1,290 +1,145 @@
 # DreamPad
+### DreamPad
+A custom little control pad that I made for my laptop 
 
-### A customizable physical control pad for your digital workspace.
+It is a custom USB control pad I made because I wanted to have quick access to keyboard shortcuts and websites, and my most used laptop shortcuts as physical buttons.
 
-**DreamPad by DreamXV** is a custom USB control pad designed to make everyday laptop interactions faster, easier, and more fun.
-
-It combines productivity shortcuts, customizable website shortcuts, volume control, an OLED display, and controls for a virtual character into one compact device.
-
----
-
-## ✨ Features
-
-- ⌨️ Copy, Cut, and Paste buttons
-- 🌐 3 customizable website/application shortcuts
-- 🔊 Rotary encoder for laptop volume control
-- 🎮 3 buttons for virtual character actions
-- 🖥️ OLED display
-- 🔌 USB connection to a laptop
-- ⚙️ Customizable button actions
-- 🧩 Custom PCB
-- 🖨️ Custom 3D-printed enclosure
+It has 9 buttons, an OLED Display and a Rotatory Encoder. The first 3 buttons are Cut, Copy and Paste. The other 6 can be set to wbsites that I often use.
 
 ---
 
-## 💡 Inspiration
+## Why I Made This
 
-I wanted to build a small physical device that could sit on my desk and give me quick access to the things I use every day.
+### I use my laptop a lot for coding and working on hardware projects, and i keep using the same shortcuts and website again and again(*also it was a mission in Stardance... LOL*)
 
-Instead of constantly switching between my keyboard, mouse, and different applications, DreamPad puts frequently used actions directly under my fingers.
-
-I also wanted to make it more personal by adding an OLED display and physical controls for a virtual character.
+So I thought, why not just make a small device for them?(**for mission :D**)
 
 ---
 
-## 🧠 How It Works
+## Button Layout 
 
-DreamPad uses a microcontroller to read the buttons and rotary encoder and communicate with the laptop through USB.
+| Position | Function |
+|---  |---|
+| 0,0 | Cut |
+| 0,1 | Copy |
+| 0,2 | Paste |
+| 1,0 | Link 1 |
+| 1,1 | Link 2 |
+| 1,2 | Link 3 |
+| 2,0 | Link 4 |
+| 2,1 | Link 5 |
+| 2,2 | Link 6 |
+
+The 6 links can be changed in the Firmware.
+
+For example, I can set them to:
 
 ```text
-Physical Input
-      ↓
-Microcontroller
-      ↓
-USB
-      ↓
-Laptop
-      ↓
-Software
-      ↓
-Shortcut / Website / Volume / Character
+YouTube
+Hack Club
+GitHub
+Slack
+ChatGPT
+My own website
 ```
-
-The buttons are arranged as a **3 × 3 matrix**, allowing 9 buttons to be controlled using fewer GPIO pins.
-
-The rotary encoder provides rotational input for volume control and also includes a push switch that can be used as an additional input.
-
-The OLED display communicates with the microcontroller using I²C.
-
----
-
-## 🔘 Controls
-
-| Control | Function |
+## Parts (*that i got for mission*)
+| Part | What I use it for |
 |---|---|
-| Button 1 | Copy |
-| Button 2 | Cut |
-| Button 3 | Paste |
-| Button 4 | Website Shortcut 1 |
-| Button 5 | Website Shortcut 2 |
-| Button 6 | Website Shortcut 3 |
-| Button 7 | Character Action 1 |
-| Button 8 | Character Action 2 |
-| Button 9 | Character Action 3 |
-| Rotary Encoder | Laptop Volume Control |
-| Encoder Press | Additional Action |
-
-### Example Website Shortcuts
-
-```text
-Button 4 → YouTube
-Button 5 → Hack Club
-Button 6 → GitHub
-```
-
-The website shortcuts can be changed depending on the user's workflow.
+| XIAO RP2040 | Main controller |
+| 9 × Switches | Buttons |
+| 9 × Diodes | Key matrix |
+| OLED | Display |
+| Rotary Encoder | Volume |
+| PCB | Connecting everything |
+| 3D Printed Case | Enclosure |
 
 ---
 
-# 🔧 Hardware
+## Schematic 
 
-## Schematic
+I started the project by making schematic in KiCad.
 
-The schematic contains the complete electrical design for DreamPad, including the 9-key matrix, rotary encoder, OLED display, and Seeed Studio XIAO microcontroller.
+This is where I worked out how the 9 buttons, OLED, rotary encoder and XIAO RP2040 would all connect.
 
-![DreamPad Schematic](images/Schematic.png)
+![Schematic](images/schematic.png)
 
 ---
 
 ## PCB
 
-After completing the schematic, I converted the design into a custom PCB layout.
+Once the schematic was working, I moved on to the PCB.
 
-The PCB contains the routing and footprints required for the microcontroller, buttons, rotary encoder, OLED, and other components.
+I placed all the components and routed the connections on the board.
 
-![DreamPad PCB](images/pcb.png)
+![PCB](images/pcb.png)
 
 ---
 
 ## PCB 3D View
 
-The 3D PCB view was used to check component placement and make sure the physical components fit correctly on the board.
+I used the 3D view in KiCad to check how the components would sit on the board.
 
-![DreamPad PCB 3D](images/pcb_3d.png)
+This also helped me catch placement problems before making the enclosure.
 
----
-
-# 🖨️ CAD Design
-
-The enclosure was designed as a custom 3D-printable case for DreamPad.
-
-The enclosure was designed around the PCB and physical components to make sure everything fits correctly.
-
-![DreamPad CAD](images/cad.png)
+![PCB 3D](images/pcb_3d.png)
 
 ---
 
+## CAD
+
+After the PCB, I made the case in Fusion 360.
+
+I designed the case around the actual PCB and components so everything would fit inside.
+
+![CAD](images/cad.png)
+
+---
 ## CAD + PCB
 
-The PCB and enclosure were combined in CAD to verify the physical fit before manufacturing and assembly.
+I then put the PCB and the case together in Fusion 360 to check the fit.
 
-This helped check the placement of the switches, rotary encoder, PCB, mounting holes, and other components.
+This was useful for checking things like the button positions, OLED, rotary encoder and the space inside the case.
 
-![DreamPad CAD + PCB](images/cad_pcb.png)
-
----
-
-# 🖥️ OLED Display
-
-DreamPad includes an OLED display connected through I²C.
-
-The OLED can provide feedback such as:
-
-- Current volume
-- Active profile
-- Button actions
-- Character status
-- Device information
+![CAD + PCB](images/cad_pcb.png)
 
 ---
 
-# 🔄 Rotary Encoder
+## Firmware
 
-The rotary encoder provides a physical way to control the laptop's volume.
+The firmware is written for the XIAO RP2040 using Antigravity IDE.
 
-```text
-Rotate Clockwise
-        ↓
-    Volume Up
+The DreamPad connects directly to my laptop using the USB port on the XIAO.
 
-Rotate Counter-Clockwise
-        ↓
-    Volume Down
+The firmware handles:
 
-Press Encoder
-        ↓
-   Custom Action
-```
+- Cut
+- Copy
+- Paste
+- 6 custom links
+- OLED
+- Rotary encoder
+- Volume up/down
+- Mute
 
-The encoder uses two quadrature signals to determine the direction of rotation.
-
----
-
-# ⌨️ Key Matrix
-
-DreamPad uses a **3 × 3 key matrix** containing 9 mechanical switches.
-
-```text
-        Column 0    Column 1    Column 2
-
-Row 0      ●           ●           ●
-
-Row 1      ●           ●           ●
-
-Row 2      ●           ●           ●
-```
-
-Each switch has a diode to help prevent unwanted key interactions and ghosting when multiple keys are pressed.
+The links are just variables in the code, so I can change them whenever I want.
 
 ---
 
-# 💻 Software
+## What I learned
 
-The software side of DreamPad handles communication between the physical device and the laptop.
+This project made me learn a lot of things I hadn't really worked with before.
 
-It is responsible for:
+I got to work with KiCad, PCB routing, key matrices, rotary encoders, OLEDs, the RP2040 and Fusion 360.
 
-- Copy / Cut / Paste shortcuts
-- Website shortcuts
-- Volume control
-- OLED feedback
-- Virtual character actions
-- Custom button mappings
+The CAD part was also pretty interesting because I had to make the case around the actual PCB instead of just designing something that looked good.
 
 ---
 
-# 🛠️ Build Process
+## Made by
 
-## 1. Schematic
+**DreamXV**
 
-I started by designing the complete electrical schematic and deciding how the buttons, OLED, rotary encoder, and microcontroller would connect.
+**DreamPad** — something I built because I wanted my own physical shortcuts instead of always reaching for the keyboard.
 
-## 2. PCB Design
+> **And ALSO FOR THE MISSION :D**
 
-After completing the schematic, I created the PCB layout and routed the connections between the components.
-
-## 3. 3D PCB Verification
-
-I added 3D models of the components to check their placement and dimensions.
-
-## 4. CAD Enclosure
-
-I designed a custom enclosure around the completed PCB and components.
-
-## 5. CAD + PCB Verification
-
-I combined the PCB and enclosure models to verify that the components would fit correctly.
-
-## 6. Assembly
-
-The final step was assembling the components and preparing the device for testing.
-
----
-
-# 📁 Project Structure
-
-```text
-DreamPad/
-│
-├── images/
-│   ├── schematic.png
-│   ├── pcb.png
-│   ├── pcb_3d.png
-│   ├── cad.png
-│   └── cad_pcb.png
-│
-├── hardware/
-│   ├── schematic/
-│   └── pcb/
-│
-├── cad/
-│
-├── firmware/
-│
-├── software/
-│
-└── README.md
-```
-
----
-
-# 📚 What I Learned
-
-Through DreamPad, I learned more about:
-
-- PCB design
-- Electronic schematics
-- Key matrices
-- Rotary encoders
-- I²C communication
-- Microcontrollers
-- USB HID
-- CAD design
-- 3D printing
-- Hardware and software integration
-
----
-
-# 🏁 Final Result
-
-DreamPad combines hardware and software into a single desktop device that makes everyday computer interactions more accessible while adding a fun and personal interface.
-
-It started as an idea for a simple control pad and developed into a complete custom hardware project.
-
----
-
-# 👨‍💻 Creator
-
-**DreamPad by DreamXV**
-
-Built by **DreamXV**.
